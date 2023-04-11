@@ -35,8 +35,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 require 'vendor/autoload.php';
 $mail = new PHPMailer(true);
 $mail->isHTML(true);
-$mail->setFrom('aadavidenkoweb@yandex.ru', 'заказчик');
-$mail->addAddress('4neroq4@gmail.com');
+$mail->isSMTP();
+$mail->Host = "smtp.elesy.ru";
+$mail->Port = 25;
+$mail->Username = "";
+$mail->Password = "";
+$mail->setFrom('noreply.scadaint@scadaint.ru', 'заказчик');
+$mail->addAddress('int@scadaint.ru');
 $body = "<h1>SEND</h1>";
 if(trim(!empty($_POST['name']))) {
     $body.='<p><strong>FIO:</strong>' .$_POST['name'].'</p>';
