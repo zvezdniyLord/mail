@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="shortcut icon" href="./media/favicon.svg">
     <link rel="stylesheet" href="./styles/index.css">
-    <title>Главная</title>
+    <title>Integrity SCADA - ИНТ</title>
 </head>
 <body class="body">
     <button class="up">
@@ -515,12 +516,16 @@
                     <h2 class="partners__title">Наши <br> Партнёры</h2>
                     <img class="partners__cursor cursor__left" src="./media/prev-icon.svg" alt="Стрелка">
                     <div class="slider">
-                        <img loading="lazy" class="partners__slider lykoil" src="./media/lykoil.svg" alt="Лукойл">
-                        <img loading="lazy" class="partners__slider gazprom" src="./media/gazprom.svg" alt="Газпром">
-                        <img loading="lazy" class="partners__slider syek" src="./media/syek.svg" alt="СУЭК">
-                        <img loading="lazy" class="partners__slider rosseti" src="./media/rosseti.svg" alt="РОССЕТИ">
-                        <img loading="lazy" class="partners__slider metro" src="./media/mm.svg" alt="Московский метрополитен">
-                        <img loading="lazy" class="partners__slider transneft" src="./media/transneft.svg" alt="Транснефть">
+                        <div class="slider__first-pack slider__pack">
+                            <img loading="lazy" class="partners__slider lykoil" src="./media/lykoil.svg" alt="Лукойл">
+                            <img loading="lazy" class="partners__slider gazprom" src="./media/gazprom.svg" alt="Газпром">
+                            <img loading="lazy" class="partners__slider syek" src="./media/syek.svg" alt="СУЭК">
+                        </div>
+                        <div class="slider__second-pack slider__pack">
+                            <img loading="lazy" class="partners__slider rosseti" src="./media/rosseti.svg" alt="РОССЕТИ">
+                            <img loading="lazy" class="partners__slider metro" src="./media/mm.svg" alt="Московский метрополитен">
+                            <img loading="lazy" class="partners__slider transneft" src="./media/transneft.svg" alt="Транснефть">
+                        </div>
                     </div>
                     <img class="partners__cursor cursor__right" src="./media/part-icon.svg" alt="Стрелка">
                 </div>
@@ -744,13 +749,13 @@
         </section>
         <section class="form__main">
             <div class="container">
-                <form id="form" class="form__main-block form" method="POST" action="#">
+                <form id="form" class="form__main-block form" method="POST" action="./php.php">
                     <h2 class="form__product-title">Хотите получить доступ к онлайн-версии, бесплатному
                         дистрибутиву для тестирования платформы
                         или задать вопрос?
                     </h2>
                     <h3 class="form__product-subtitle">Заполните форму и получите доступ к приложению.</h3>
-                    <!--<p class="form__product-warning">Пожалуйста, заполните все обязательные поля.</p>-->
+                    <p class="form__product-warning">Пожалуйста, заполните все обязательные поля.</p>
                     <input name="name" class="form__main-fio" type="text" placeholder="ФИО">
                     <div class="form__inputs">
                         <div class="form__left-input">

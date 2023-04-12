@@ -5,7 +5,7 @@ const slider = document.querySelector('.slider');
 const sliderFirst = document.querySelector('.slider__first-pack')
 const sliderSecond = document.querySelector('.slider__second-pack');
 const certFirstBig = document.querySelector(".cert__big-first");
-const partnersSlider = document.querySelectorAll(".partners__slider");
+
 
 const visualLeft = document.querySelector(".visual__left-arrow");
 const visualRight = document.querySelector(".visual__right-arrow");
@@ -59,8 +59,8 @@ span2.addEventListener('click', () =>  closeModal(modal2));
 
 const closeModal = closeElement => closeElement.style.display = "none";
 
-//leftCursor.addEventListener('click', moveLeftCarousel);
-//rightCursor.addEventListener('click', moveRightCarousel)
+leftCursor.addEventListener('click', moveLeftCarousel);
+rightCursor.addEventListener('click', moveRightCarousel)
 
 function moveRightCarousel() {
     if(sliderSecond.style.display = "none") {
@@ -120,7 +120,6 @@ visualLeft.addEventListener("click", () => {
 /*allVisualImages.forEach(image => {
     image.addEventListener("click", () => imageModal(visualModal));
 });
-
 function imageModal(domElem) {
     domElem.style.display = "flex";
 }*/
@@ -156,38 +155,3 @@ function animate(domElement, timeInterval) {
         }
     }, timeInterval)
 }
-
-sliderSecond
-
-const carousel = (elements, countClick = 0) => {
-    for(let i = 0; i < elements.length; i++) {
-        if(countClick == elements.length) {
-            console.log("Элементы закончились");
-            return;
-        }
-    }
-    console.log(countClick);
-}
-
-const infinityCarousel = (elements) => {
-    let count = 0;
-    for(let i = 0; i < elements.length; i++) {
-        elements[i].addEventListener("click", () => {
-            console.log(elements[i]);
-            count += 1;
-            elements[i].style.transform = "translateX(30px)";
-        });
-    }
-}
-
-const countClicks = (element) => {
-    let click = 0;
-    element.addEventListener("click", () => {
-        element.innerHTML = `Clicks: ${click += 1}`;
-    });
-}
-
-infinityCarousel(partnersSlider)
-
-//boxArrowRigth.addEventListener("click", () => rightCarousel(box))
-//boxArrowLeft.addEventListener("click", () => leftCarousel(box))
