@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function() {
     async function formSend(e) {
         e.preventDefault();
         const formData = new FormData(form);
-        let response = await fetch('../php.php', {
+        const response = await fetch('../php.php', {
             method: "POST",
             body: formData,
             signal: controller.signal,
         });
         if(response.ok) {
-            let result = await response.json();
+            const result = await response.json();
             alertSendForm(inputSubmit, "Сообщение отправлено");
             restartInput();
             e.target.reset();
@@ -36,3 +36,19 @@ const restartInput = () => {
     }, 3000);
 }
 
+/*$defaultMail = '';
+$email_addresses = array(
+    'ИНТ' => 'int@scadaint.ru', 
+	'Техническая поддержка' => 'support@scadaint.ru',
+    'Запрос документации' => "commerce@scadaint.ru",
+    'Запрос пробной версии' => "commerce@scadaint.ru",
+    'Запрос ценового предложения' => "commerce@scadaint.ru",
+    'Запрос на обучение' => "commerce@scadaint.ru",
+
+);
+
+if (isset($email_addresses[$_POST['select']])) {
+   $defaultMail = $email_addresses[$_POST['select']];
+}
+
+$mail->addAddress($defaultMail);*/

@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta content="Integrity SCADA" name="og:title">
+    <meta content="Integrity SCADA - ИНТ" name="og:description">
+    <meta content="Integrity SCADA - ИНТ" name="description">
     <link rel="shortcut icon" href="./media/favicon.svg">
     <link rel="stylesheet" href="./styles/index.css">
     <title>Integrity SCADA - ИНТ</title>
@@ -721,7 +724,7 @@
                             </picture>
                             <h3 class="news__block-title">"АГРОПРОМДАШ-2022"</h3>
                             <p class="news__block-text">28-я международная выставка «Оборудование, технологии, сырье и ингредиенты для пищевой и перерабатывающей промышленности...</p>
-                            <p class="news__block-text">Август 2022</p>
+                            <!--<p class="news__block-text">Август 2022</p>-->
                         </div>
                     </div>
                     <div class="news-hover">
@@ -731,7 +734,7 @@
                             </picture>
                             <h3 class="news__block-title">Выставка «Радиоэлектроника и приборостроение»</h3>
                             <p class="news__block-text" style="margin-top: 0.7rem">С 21 по 23 сентября 2022 г. в Санкт-Петербурге состоялась выставка «Радиоэлектроника и приборостроение», где наша компания представила решения на основе коплекса Integrity SCADA. Акцент на удобстве использования, гибкости...</p>
-                            <p class="news__block-text">Август 2022</p>
+                            <!--<p class="news__block-text">Август 2022</p>-->
                         </div>
                     </div>
                     <div class="news-hover">
@@ -741,7 +744,7 @@
                             </picture>
                             <h3 class="news__block-title">Релиз 1.0.3</h3>
                             <p class="news__block-text">Упор обновления сделан на клиентские компоненты, расширены возможности среды визуализации, упрощающие работу с проектом, расширен функционал клиентских приложений отображения графиков и событий. Добавлен протокол Unet...</p>
-                            <p class="news__block-text">Август 2022</p>
+                            <!--<p class="news__block-text">Август 2022</p>-->
                         </div>
                     </div>
                 </div>
@@ -756,10 +759,10 @@
                     </h2>
                     <h3 class="form__product-subtitle">Заполните форму и получите доступ к приложению.</h3>
                     <p class="form__product-warning">Пожалуйста, заполните все обязательные поля.</p>
-                    <input name="name" class="form__main-fio" type="text" placeholder="ФИО">
+                    <input required name="name" class="form__main-fio" type="text" placeholder="ФИО">
                     <div class="form__inputs">
                         <div class="form__left-input">
-                            <label for="company"><input id="company" name="company" class="content__input-small" type="text" placeholder="Компания"></label>
+                            <label for="company"><input required id="company" name="company" class="content__input-small" type="text" placeholder="Компания"></label>
                             <div class="div__input-select">
                                 <select name="select" class="content__input-small content__input-select" name="target__request" id="product__select">
                                     <option selected disabled value="">Цель запроса</option>
@@ -774,11 +777,11 @@
                             <!--<input class="content__input-small" type="text" placeholder="Цель запроса">-->
                         </div>
                         <div class="form__right-input">
-                            <input name="email" class="content__input-small" type="email" placeholder="Электронная почта">
-                            <input pattern="^((\+7|7|8)+([0-9]){10})$" name="tel" class="content__input-small" type="tel" placeholder="Телефон">
+                            <input required name="email" class="content__input-small" type="email" placeholder="Электронная почта">
+                            <input required pattern="^((\+7|7|8)+([0-9]){10})$" name="tel" class="content__input-small" type="tel" placeholder="Телефон">
                         </div>
                     </div>
-                    <input name="message" class="product__input" type="text" placeholder="Сообщение">
+                    <input required name="message" class="product__input" type="text" placeholder="Сообщение">
                     <div class="btn__submit-main">
                         <p class="form__text"><span class="form__blue">Отправляя запрос, Вы даёте согласие на обработку</span> <br> <span class="warning">ПЕРСОНАЛЬНЫХ ДАННЫХ</span></p>
                         <input class="btn__product-submit" type="submit">

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Integrity SCADA" name="og:title">
+    <meta content="Integrity SCADA - ИНТ" name="og:description">
+    <meta content="Integrity SCADA - ИНТ" name="description">
     <link rel="shortcut icon" href="./media/favicon.svg">
     <link rel="stylesheet" href="./styles/index.css">
     <title>Продукты</title>
@@ -330,40 +333,45 @@
                     <p class="content__text mt-20">Реализация дополнительной логики системы, за счет использования функций математической и логической обработки данных</p>
                     <p class="content__text mt-20">Полная техническая документация на русском языке</p>
                     <p class="content__text mt-20">Возможность наращивания мощностей и функционала системы в будущем, за счет расширения приобретённой лицензии</p>
-                    <form class="form" action="#">
-                        <div class="form__product">
-                            <h2 class="form__product-title">Хотите получить доступ к онлайн-версии, бесплатному
-                                дистрибутиву для тестирования платформы 
-                                или задать вопрос?
-                            </h2>
-                            <h3 class="form__product-subtitle">Заполните форму и получите доступ к приложению.</h3>
-                            <p class="form__product-warning">Пожалуйста, заполните все обязательные поля.</p>
-                            <div class="form__block">
+                    <section class="form__main">
+                        <div class="container">
+                            <form id="form" class="form__main-new-view form__main-block form" method="POST" action="./php.php">
+                                <h2 class="form__product-title">Хотите получить доступ к онлайн-версии, бесплатному
+                                    дистрибутиву для тестирования платформы
+                                    или задать вопрос?
+                                </h2>
+                                <h3 class="form__product-subtitle">Заполните форму и получите доступ к приложению.</h3>
+                                <p class="form__product-warning">Пожалуйста, заполните все обязательные поля.</p>
+                                <input required name="name" class="form__main-fio" type="text" placeholder="ФИО">
                                 <div class="form__inputs">
                                     <div class="form__left-input">
-                                        <input class="content__input-small" type="text" placeholder="ФИО">
-                                        <input class="content__input-small" type="text" placeholder="Компания">
-                                        <input class="content__input-small" type="text" placeholder="Объект автоматизации">
+                                        <label for="company"><input required id="company" name="company" class="content__input-small" type="text" placeholder="Компания"></label>
+                                        <div class="div__input-select">
+                                            <select name="select" class="content__input-small content__input-select" name="target__request" id="product__select">
+                                                <option disabled value="">Цель запроса</option>
+                                                <option class="option" value="Техническая поддержка">Техническая поддержка</option>
+                                                <option class="option" value="Интеграторам">Интеграторам</option>
+                                                <option class="option" value="Запрос документации">Запрос документации</option>
+                                                <option selected class="option" value="Запрос пробной версии">Запрос пробной версии</option>
+                                                <option class="option" value="Запрос ценового предложения">Запрос ценового предложения</option>
+                                                <option class="option" value="Запрос на обучение">Запрос на обучение</option>
+                                            </select>
+                                        </div>
+                                        <!--<input class="content__input-small" type="text" placeholder="Цель запроса">-->
                                     </div>
                                     <div class="form__right-input">
-                                        <input class="content__input-small" type="email" placeholder="Электронная почта">
-                                        <input class="content__input-small" type="tel" placeholder="Телефон">
-                                        <select class="content__input-small" name="" id="product__select">
-                                            <option value="">Купить</option>
-                                            <option value="">Купить</option>
-                                            <option value="">Купить</option>
-                                        </select>
-                                        
+                                        <input required name="email" class="content__input-small" type="email" placeholder="Электронная почта">
+                                        <input required pattern="^((\+7|7|8)+([0-9]){10})$" name="tel" class="content__input-small" type="tel" placeholder="Телефон">
                                     </div>
                                 </div>
-                                <input class="product__input" type="text" placeholder="Сообщение">
-                                <div class="form__submit-block">
-                                    <p class="form__text">Отправляя запрос, Вы даёте согласие на обработку <br> <span class="warning">ПЕРСОНАЛЬНЫХ ДАННЫХ</span></p>
-                                    <button class="btn__product-submit" type="submit">Отправить запрос</button>
+                                <input required name="message" class="product__input" type="text" placeholder="Сообщение">
+                                <div class="btn__submit-main">
+                                    <p class="form__text"><span class="form__blue">Отправляя запрос, Вы даёте согласие на обработку</span> <br> <span class="warning">ПЕРСОНАЛЬНЫХ ДАННЫХ</span></p>
+                                    <input class="btn__product-submit" type="submit">
                                 </div>
-                            </div>
+                            </form>
                         </div>
-                    </form>
+                    </section>
                 </div>
             </div>
         </div>
@@ -393,5 +401,6 @@
     </footer>
 <script src="./scripts/scadaList.js"></script>
 <script src="scripts/about.js"></script>
+<script src="./scripts/mail.js"></script>
 </body>
 </html>

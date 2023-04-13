@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Integrity SCADA" name="og:title">
+    <meta content="Integrity SCADA - ИНТ" name="og:description">
+    <meta content="Integrity SCADA - ИНТ" name="description">
     <link rel="shortcut icon" href="./media/favicon.svg">
     <link rel="stylesheet" href="./styles/index.css">
     <title>IntegrityServer</title>
@@ -344,7 +347,7 @@
                     </ul>
                     <section class="form__main">
                         <div class="container">
-                            <form id="form" class="form__main-block form" method="POST" action="./php.php">
+                            <form id="form" class="form__main-new-view form__main-block form" method="POST" action="./php.php">
                                 <h2 class="form__product-title">Хотите получить доступ к онлайн-версии, бесплатному
                                     дистрибутиву для тестирования платформы
                                     или задать вопрос?
@@ -357,11 +360,11 @@
                                         <label for="company"><input id="company" name="company" class="content__input-small" type="text" placeholder="Компания"></label>
                                         <div class="div__input-select">
                                             <select name="select" class="content__input-small content__input-select" name="target__request" id="product__select">
-                                                <option selected disabled value="">Цель запроса</option>
+                                                <option disabled value="">Цель запроса</option>
                                                 <option class="option" value="Техническая поддержка">Техническая поддержка</option>
                                                 <option class="option" value="Интеграторам">Интеграторам</option>
                                                 <option class="option" value="Запрос документации">Запрос документации</option>
-                                                <option class="option" value="Запрос пробной версии">Запрос пробной версии</option>
+                                                <option selected class="option" value="Запрос пробной версии">Запрос пробной версии</option>
                                                 <option class="option" value="Запрос ценового предложения">Запрос ценового предложения</option>
                                                 <option class="option" value="Запрос на обучение">Запрос на обучение</option>
                                             </select>

@@ -44,3 +44,17 @@ header('Content-type: application/json');
 echo json_encode($response);
 ?>
 
+$defaultMail = '4neroq4@gmail.com';
+$email_addresses = array(
+	'Техническая поддержка' => 'support@scadaint.ru'б
+    'Запрос документации' => 'commerce@scadaint.ru'
+    'Запрос пробной версии' => 'commerce@scadaint.ru'
+    'Запрос ценового предложения' => 'commerce@scadaint.ru'
+    'Запрос на обучение' => 'commerce@scadaint.ru'
+);
+
+if (isset($email_addresses[$_POST['select']])) {
+   $defaultMail = $email_addresses[$_POST['select']];
+}
+
+$mail->addAddress($defaultMail);
