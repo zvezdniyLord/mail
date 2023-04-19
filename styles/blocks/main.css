@@ -473,9 +473,21 @@
 .visual__hover {
     overflow: hidden;
     transition: all 0.2s ease;
+    cursor: pointer;
+
+}
+
+.visual__hover-2 {
+    overflow: hidden;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .visual__hover:hover {
+    transform: scale(1.1);
+}
+
+.visual__hover-2:hover {
     transform: scale(1.1);
 }
 
@@ -640,6 +652,80 @@
     background-color: #34547A;
     box-shadow: 0px 4px 4px rgba(0, 57, 104, 0.4);
 }
+
+.popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.popup-2 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.popup-close {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.popup-close-2 {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.popup-description {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-top: 20px;
+    font-weight: 700px;
+}
+
+.popup-description-2 {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-top: 20px;
+    font-weight: 700px;
+}
+
+.popup-image {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.popup-image-2 {
+    max-width: 90%;
+    max-height: 90%;
+}
 /* end visual */
 
 /* start news */
@@ -768,6 +854,7 @@
 
 .form__captcha-text {
     margin-top: 10px;
+    text-align: center;
 }
 
 .form__captcha-input {
@@ -778,12 +865,7 @@
 }
 
 .btn__captcha {
-    margin-top: 10px;
-    background-color: var(--color-btn-blue);
-    width: 125px;
-    height: 25px;
-    color: #fff;
-    font-size: 1rem;
+   
 }
 
 .captcha__char {

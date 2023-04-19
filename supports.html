@@ -298,7 +298,7 @@
                                     <div class="form__left-input">
                                         <label for="company"><input required id="company" name="company" class="content__input-small" type="text" placeholder="Компания"></label>
                                         <div class="div__input-select">
-                                            <select name="select" class="content__input-small content__input-select" name="target__request" id="product__select">
+                                            <select name="select" class="req content__input-small content__input-select" name="target__request" id="product__select">
                                                 <option disabled value="">Цель запроса</option>
                                                 <option selected class="option" value="Техническая поддержка">Техническая поддержка</option>
                                                 <option class="option" value="Интеграторам">Интеграторам</option>
@@ -311,20 +311,20 @@
                                         <!--<input class="content__input-small" type="text" placeholder="Цель запроса">-->
                                     </div>
                                     <div class="form__right-input">
-                                        <input required name="email" class="content__input-small" type="email" placeholder="Электронная почта">
-                                        <input required pattern="^((\+7|7|8)+([0-9]){10})$" name="tel" class="content__input-small" type="tel" placeholder="Телефон">
+                                        <input class="req content__input-small" required name="email"  type="email" placeholder="Электронная почта">
+                                        <input class="req content__input-small" required pattern="^((\+7|7|8)+([0-9]){10})$" name="tel"  type="tel" placeholder="Телефон">
                                     </div>
                                 </div>
-                                <input required name="message" class="product__input" type="text" placeholder="Сообщение">
+                                <input class="product__input req" required name="message"  type="text" placeholder="Сообщение">
                                 <div class="form__captcha">
                                     <h3 class="form__captcha-target" data-value="8">Integrity SCADA</h3>
-                                    <p class="form__captcha-text">Укажите букву, подсвеченную красным цветов в названии Integrity SCADA</p>
+                                    <p class="form__captcha-text">Укажите букву, подсвеченную красным цветом в названии Integrity SCADA</p>
                                     <input maxlength="1" class="form__captcha-input" required type="text" placeholder="Введите букву">
-                                    <button class="btn__captcha">Подтвердить</button>
+                                    <span class="captcha__warning form__product-warning">Не совпадает</span>
                                 </div>
                                 <div class="btn__submit-main">
                                     <p class="form__text"><span class="form__blue">Отправляя запрос, Вы даёте согласие на обработку</span> <br> <span class="warning">ПЕРСОНАЛЬНЫХ ДАННЫХ</span></p>
-                                    <input disabled="disabled" class="btn__product-submit" type="submit">
+                                    <input class="btn__product-submit" type="submit">
                                 </div>
                             </form>
                         </div>
@@ -358,6 +358,5 @@
     </footer>
 <script src="scripts/about.js"></script>
 <script src="./scripts/mail.js"></script>
-<script src="./scripts/captcha.js"></script>
 </body>
 </html>

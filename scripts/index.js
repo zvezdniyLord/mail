@@ -4,8 +4,7 @@ const rightCursor = document.querySelector('.cursor__right');
 const slider = document.querySelector('.slider');
 const sliderFirst = document.querySelector('.slider__first-pack')
 const sliderSecond = document.querySelector('.slider__second-pack');
-const certFirstBig = document.querySelector(".cert__big-first");
-
+const sliderPacks = document.querySelectorAll('.slider__pack');
 
 const visualLeft = document.querySelector(".visual__left-arrow");
 const visualRight = document.querySelector(".visual__right-arrow");
@@ -36,7 +35,6 @@ const numYear = document.querySelector('.info__num-year');
 const numProjects = document.querySelector('.info__num-projects');
 const numLicence = document.querySelector('.info__num-licence');
 
-const sliderPacks = document.querySelectorAll(".slider__pack");
 
 img.addEventListener("click", () => getModal(modal, modalImg, captionText, img));
 img2.addEventListener("click", () => getModal(modal2, modalImg2, captionText2, img2));
@@ -50,46 +48,20 @@ function getModal(modalElem, modalImg, text, originalImg) {
 
 const span = document.getElementsByClassName("close")[0];
 const span2 = document.getElementsByClassName("close2")[0];
-//const span3 = document.getElementsByClassName("close3")[0];
-
-span.addEventListener('click', () =>  closeModal(modal));
+    
+span.addEventListener('click', () => closeModal(modal));
 span2.addEventListener('click', () =>  closeModal(modal2));
-//span3.addEventListener("click", () => closeModal(modal3));
-//visualModalEsc.addEventListener("click", () => closeModal(visualModal))
 
+
+document.querySelector("body").addEventListener("keydown", e => {
+    if(e.key === "Escape") {
+        closeModal(modal);
+    }
+})
+
+
+const escEvent = closeElement => closeElement.style.display = "none";
 const closeModal = closeElement => closeElement.style.display = "none";
-
-leftCursor.addEventListener('click', moveLeftCarousel);
-rightCursor.addEventListener('click', moveRightCarousel)
-
-function moveRightCarousel() {
-    if(sliderSecond.style.display = "none") {
-        sliderSecond.style.display = "flex";
-        sliderSecond.style.justifyContent = "space-between";
-        sliderSecond.style.alignItems = "center";
-        sliderFirst.style.display = "none";
-        slider.style.maxWidth = "100%";
-    }
-}
-
-function moveLeftCarousel() {
-    if(sliderFirst.style.display = "none") {
-        sliderFirst.style.display = "flex";
-        sliderFirst.style.justifyContent = "space-between";
-        sliderFirst.style.alignItems = "center";
-        sliderSecond.style.display = "none";
-        slider.style.maxWidth = "712px";
-    }
-}
-
-function onMobileSlider() {
-   if(window.innerWidth > 320 && window.innerWidth < 440) {
-    sliderFirst.style.display = "flex";
-    sliderSecond.style.display = "flex";
-   }
-}
-
-window.addEventListener("resize", onMobileSlider);
 
 btnUp.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -116,13 +88,6 @@ visualLeft.addEventListener("click", () => {
         visualPoint.classList.add("visual__point");
     }
 });
-
-/*allVisualImages.forEach(image => {
-    image.addEventListener("click", () => imageModal(visualModal));
-});
-function imageModal(domElem) {
-    domElem.style.display = "flex";
-}*/
 
 const infoBlocks = document.querySelector('.info__blocks');
 
@@ -153,5 +118,29 @@ function animate(domElement, timeInterval) {
         if(start == end) {
             clearInterval(interval);
         }
-    }, timeInterval)
+    }, timeInterval);
 }
+
+leftCursor.addEventListener('click', moveLeftCarousel);
+rightCursor.addEventListener('click', moveRightCarousel)
+
+function moveRightCarousel() {
+    if(sliderSecond.style.display = "none") {
+        sliderSecond.style.display = "flex";
+        sliderSecond.style.justifyContent = "space-between";
+        sliderSecond.style.alignItems = "center";
+        sliderFirst.style.display = "none";
+        slider.style.maxWidth = "100%";
+    }
+}
+
+function moveLeftCarousel() {
+    if(sliderFirst.style.display = "none") {
+        sliderFirst.style.display = "flex";
+        sliderFirst.style.justifyContent = "space-between";
+        sliderFirst.style.alignItems = "center";
+        sliderSecond.style.display = "none";
+        slider.style.maxWidth = "712px";
+    }
+}
+
