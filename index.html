@@ -24,7 +24,7 @@
                 <source srcset="./media/logo-mobile.svg" media="(max-width: 440px)">
                 <img class="header__logo" width="41" height="41" src="./media/logo.svg" alt="Логотип">
             </picture>
-            <h1 class="header__title">ИНТ</h1>
+            <h2 class="header__title">ИНТ</h2>
         </div>
         <div class="header__container">
             <div class="header__container-items">
@@ -278,7 +278,7 @@
         </section>
         <section class="scada">
             <div class="container">
-                <a href="./products.html"><h2 class="scada__title">Integrity SCADA</h2></a>
+                <a href="./products.html"><h1 class="scada__title">Integrity SCADA</h1></a>
                 <div class="scada__blocks">
                     <a href="./hmi.html">
                         <div class="scada__block">
@@ -498,7 +498,7 @@
                     <picture>
                         <img width="150" height="212" loading="lazy" class="astra__cert cert1" src="./media/sert-big.webp" alt="сертификат">
                     </picture>
-                    <div id="myModal" class="modal">
+                    <div id="myModal" class="modal closeElem">
                         <span class="close">&times;</span>
                         <img class="modal-content" id="img01">
                         <div id="caption"></div>
@@ -506,7 +506,7 @@
                     <picture>
                         <img width="150" height="212" loading="lazy" class="astra__cert cert2" src="./media/cert_2.webp" alt="сертификат">
                     </picture>
-                    <div id="myModal2" class="modal">
+                    <div id="myModal2" class="modal closeElem">
                         <span class="close2">&times;</span>
                         <img class="modal-content" id="img02">
                         <div id="caption2"></div>
@@ -519,7 +519,7 @@
                 <hr class="slider__top slider__hr">
                 <div class="partners__block">
                     <h2 class="partners__title">Наши <br> Партнёры</h2>
-                    <img class="partners__cursor cursor__left" src="./media/prev-icon.svg" alt="Стрелка">
+                    <img class="partners__cursor cursor__left" id="prev" src="./media/prev-icon.svg" alt="Стрелка">
                     <div class="slider">
                         <div class="slider__first-pack slider__pack">
                             <img loading="lazy" class="partners__slider lykoil" src="./media/lykoil.svg" alt="Лукойл">
@@ -532,7 +532,21 @@
                             <img loading="lazy" class="partners__slider transneft" src="./media/transneft.svg" alt="Транснефть">
                         </div>
                     </div>
-                    <img class="partners__cursor cursor__right" src="./media/part-icon.svg" alt="Стрелка">
+                    <div class="slider_wrapper">
+                        <div class="slider_main">
+                          <div class="slider_screen">
+                            <div class="slider_ribbon" style="transform: translateX(-186%)" id="ribbon">
+                                 <img loading="lazy" class="partners__slider lykoil" src="./media/test-lykoil.png" alt="Лукойл">
+                                 <img loading="lazy" class="partners__slider slider-img gazprom" src="./media/gazprom.svg" alt="Газпром">
+                                 <img loading="lazy" class="partners__slider slider-img syek" src="./media/syek.svg" alt="СУЭК">
+                                 <img loading="lazy" class="partners__slider slider-img rosseti" src="./media/rosseti.svg" alt="РОССЕТИ">
+                                 <img loading="lazy" class="partners__slider slider-img metro"  src="./media/mm.svg" alt="Московский метрополитен" width="102" height="99">
+                                 <img loading="lazy" class="partners__slider slider-img transneft" src="./media/transneft.svg" alt="Транснефть">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <img class="partners__cursor cursor__right" id="next" src="./media/part-icon.svg" alt="Стрелка">
                 </div>
                 <hr class="slider__bottom slider__hr">
             </div>
@@ -567,7 +581,7 @@
                                     <picture>
                                         <img class="visual__hover visual-one" loading="lazy" width="720" height="263" src="./media/popup1.jpg" alt="АСУ ТП нефтеперерабатывающего завода. Общая мнемосхема">
                                     </picture>
-                                    <section class="popup">
+                                    <section class="popup closeElem">
                                         <span class="popup-close">X</span>
                                         <img class="popup-image" src="#" alt="Мнемосхема">
                                         <p class="popup-description"></p>
@@ -578,7 +592,7 @@
                             <div class="visual__top-small visual-small visual__blc">
                                 <div style="overflow: hidden;">
                                     <picture>
-                                        <img width="380" height="263" class="visual__hover 2" loading="lazy" src="./media/popup3.png" alt="АСУ ТП Котельная">
+                                        <img class="visual__hover 2" width="380" height="263" loading="lazy" src="./media/popup3.png" alt="АСУ ТП Котельная">
                                     </picture>
                                 </div>
                                 <p class="visual__text">АСУ ТП Котельная</p>
@@ -612,7 +626,7 @@
                                     <picture>
                                         <img class="visual__hover-2" width="720" height="263" src="./media/popup6.png" alt="АСУ ТП Комплекса по изготовлению диоксида титана">
                                     </picture>
-                                    <section class="popup-2">
+                                    <section class="popup-2 closeElem">
                                         <span class="popup-close-2">X</span>
                                         <img class="popup-image-2" src="#" alt="Мнемосхема">
                                         <p class="popup-description-2"></p>
@@ -722,7 +736,7 @@
                     </h2>
                     <h3 class="form__product-subtitle">Заполните форму и получите доступ к приложению.</h3>
                     <p class="form__product-warning">Пожалуйста, заполните все обязательные поля.</p>
-                    <input required name="name" class="form__main-fio" type="text" placeholder="ФИО">
+                    <input class="form__main-fio" id="form-name" maxlength="50" required name="name" type="text" placeholder="ФИО">
                     <div class="form__inputs">
                         <div class="form__left-input">
                             <label for="company"><input required id="company" name="company" class="content__input-small" type="text" placeholder="Компания"></label>
@@ -744,7 +758,7 @@
                             <input required pattern="^((\+7|7|8)+([0-9]){10})$" name="tel" class="content__input-small" type="tel" placeholder="Телефон">
                         </div>
                     </div>
-                    <input required name="message" class="product__input" type="text" placeholder="Сообщение">
+                    <textarea class="product__input" id="form-message" required name="message" type="text" placeholder="Сообщение"></textarea>
                     <div class="form__captcha">
                         <h3 class="form__captcha-target" data-value="8">Integrity SCADA</h3>
                         <p class="form__captcha-text">Укажите букву, подсвеченную красным цветом в названии Integrity SCADA</p>

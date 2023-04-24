@@ -1,5 +1,7 @@
 const inputSubmit = document.querySelector(".btn__product-submit");
-const controller = new AbortController();
+let controller = new AbortController();
+const formMessage = document.getElementById("form-message");
+
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("form");
     form.addEventListener("submit", formSend);
@@ -9,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let error = formValidate(form);
         const formData = new FormData(form);
+
         if(error === 0) {
             const response = await fetch('../php.php', {
                 method: "POST",
@@ -21,11 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 alertSendForm(inputSubmit, "Сообщение отправлено");
                 restartInput();
             } else {
-                controller.abort();
+                resetFetch();
                 console.log("response ne ok");
                 alertSendForm(inputSubmit, "Ошибка");
                 restartInput();
-                console.log(e);
             }
         } else {
             console.log("empty");
@@ -33,6 +35,15 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(formData);
     }
 });
+
+const resetFetch = () => {
+    setTimeout(() => {
+        controller.abort();
+        controller = new AbortController();
+    }, 3000);
+}
+
+
 const alertSendForm = (element, value) => {
     element.value = value;
 };
@@ -45,12 +56,8 @@ const restartInput = () => {
 
 function formValidate(form) {
     let error = 0;
-    const targetText = document.querySelector(".form__captcha-target");
     const captchaInput = document.querySelector('.form__captcha-input');
-    const btnCaptcha = document.querySelector(".btn__captcha");
-    const submit = document.querySelector(".btn__product-submit");
     const warning = document.querySelector(".captcha__warning");
-    const captchaForm = document.querySelector('.form__captcha');
     const char = document.querySelector(".captcha__char").innerHTML;
     const inputs = document.querySelectorAll('.req');
     for(let i = 0; i < inputs.length; i++) {
@@ -58,17 +65,18 @@ function formValidate(form) {
         if(input.value === '') {
             error++;
         }
-        if(captchaInput.value === char) {
-            console.log("true captcha");
-            warning.style.display = "none";
-        } else {
-            console.log("false captcha");
-            warning.style.display = "block";
-            captchaInput.value = "";
-        }
-    }   
+    }
+    if(captchaInput.value === char) {
+        console.log("true captcha");
+        warning.style.display = "none";
+    } else {
+        console.log("false captcha");
+        warning.style.display = "block";
+        captchaInput.value = "";
+    }
+   
     return error;
-}
+};
 
 function createCaptcha(text) {
     if(typeof text != "string") {
