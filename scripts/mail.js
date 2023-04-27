@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 restartInput();
             } else {
                 resetFetch();
-                console.log("response ne ok");
+                console.log(`response ne ok`);
                 alertSendForm(inputSubmit, "Ошибка");
                 restartInput();
             }
